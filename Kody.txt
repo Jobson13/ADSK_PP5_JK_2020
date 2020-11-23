@@ -1,0 +1,73 @@
+
+
+
+//student jako struktura danych
+
+
+student ={
+	"uklad_pokarmowy": {
+		"otrzewna":{
+			"zoladek":{
+				"zawartosc":[]	
+			}
+		}
+	}
+}
+
+//proste
+student
+	.get(uklad_pokarmowy)
+	.get(otrzewna)
+	.get(zoladek)
+	.get(zawartosc)
+	.add(new Kielbasa(2))
+	
+class Student {
+	private DevNullUkladPokarmowy;
+	
+	public void zjedz(Posilek p) {
+	
+		if (p == Kielbasa) {
+			throw IDontLikeException();
+		}
+		
+		devNullUkladPokarmowy.traw(p);
+	}
+}
+
+
+class Wykladowca {
+	private MelmakUkladPokarmowy;
+	
+	public void zjedz(Posilek p) { //Abstrakcja
+		if (p != Kot) {
+			throw IDontLikeException(); //Enkapsulacja
+		}
+		
+		MelmakUkladPokarmowy.traw(p);
+	} 
+}
+
+student2 = ne Student();
+wykladowca = new Wykladowca();
+
+
+stolowka = new Stolowka()
+stolowka.nakarm([student2, wykladowca])
+
+
+class Stolowka{
+	public void nakarm(List glodomory){
+		for toBeFeed in glodomory{
+			toBeFeed.zjedz(new nalesnik()) //Polimorfizm
+		}
+	}
+}
+
+
+
+
+
+
+
+
