@@ -55,7 +55,7 @@ public class ProductCatalogTest {
         catalog.applyPrice(productId, BigDecimal.TEN);
         Product loaded = catalog.load(productId);
         //Assert
-        Assert.assertEquals(loaded.getPrice, BigDecimal.TEN);
+        Assert.assertEquals(loaded.getPrice(), BigDecimal.TEN);
     }
 
     private static ProductCatalog thereIsProductCatalog() {
