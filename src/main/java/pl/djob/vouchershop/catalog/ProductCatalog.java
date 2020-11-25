@@ -10,4 +10,12 @@ public class ProductCatalog {
     public boolean isExists(String productId) {
         return true;
     }
+
+    public Product load(String productId) {
+        return null;
+    }
+
+    public void updateDetails(String productId, String productDesc, String productPicture) {
+
+    }
 }
