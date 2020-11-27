@@ -74,7 +74,7 @@ public class ProductCatalogTest {
     }
 
     private static ProductCatalog thereIsProductCatalog() {
-        return new ProductCatalog();
+        return new ProductCatalogConfiguration().myProductCatalog();
     }
 
 }
