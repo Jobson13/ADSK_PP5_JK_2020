@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class ProductCatalogTest {
 
@@ -56,6 +57,20 @@ public class ProductCatalogTest {
         Product loaded = catalog.load(productId);
         //Assert
         Assert.assertEquals(loaded.getPrice(), BigDecimal.TEN);
+    }
+    @Test
+    public void itAllowsToListAllProducts(){
+        //Arrange
+        ProductCatalog catalog = thereIsProductCatalog();
+        //Act
+        String productId = catalog.registerProduct();
+        catalog.updateDetails(productId, PRODUCT_DESC, PRODUCT_PICTURE);
+        catalog.applyPrice(productId, BigDecimal.TEN);
+
+        String draftProductId = catalog.registerProduct();
+        List<Product> all = catalog.allPublished();
+
+        Assert.assertEquals(1,all.size());
     }
 
     private static ProductCatalog thereIsProductCatalog() {

@@ -2,7 +2,9 @@ package pl.djob.vouchershop.catalog;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class ProductCatalog {
     private final HashMap<String, Product> products;
@@ -37,5 +39,13 @@ public class ProductCatalog {
         loaded.setPrice(price);
 
 
+    }
+
+    public List<Product> allPublished() {
+        return products.values()
+                .stream()
+                .filter(p ->p.getDescription() != null)
+                .filter(p ->p.getPicture() != null)
+                .collect(Collectors.toList());
     }
 }
