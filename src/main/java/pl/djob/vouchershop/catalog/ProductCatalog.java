@@ -6,10 +6,10 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class ProductCatalog {
-    private final ProductStorage products;
+    private final HashMapProductStorage products;
 
     public ProductCatalog() {
-        this.products = new ProductStorage();
+        this.products = new HashMapProductStorage();
     }
 
     public String registerProduct() {

@@ -3,12 +3,12 @@ package pl.djob.vouchershop.catalog;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class ProductStorage {
+
+public class HashMapProductStorage {
     private final HashMap<String, Product> products;
 
-    public ProductStorage() {
+    public HashMapProductStorage() {
         this.products =  new HashMap<>();
     }
 
