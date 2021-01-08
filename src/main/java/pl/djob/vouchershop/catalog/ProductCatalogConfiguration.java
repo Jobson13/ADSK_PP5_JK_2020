@@ -13,10 +13,10 @@ public class ProductCatalogConfiguration {
         return new ProductCatalog(new HashMapProductStorage());
     }
 
-    @Bean
-    ProductStorage mongoDbStorage() {
-        return null;
-    }
+//    @Bean
+//    ProductStorage mongoDbStorage() {
+//        return null;
+//    }
 
     @Bean
     ProductStorage myHashMapProductStorage() {
