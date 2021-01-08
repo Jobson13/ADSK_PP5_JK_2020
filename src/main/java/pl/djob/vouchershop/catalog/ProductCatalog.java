@@ -1,5 +1,7 @@
 package pl.djob.vouchershop.catalog;
 
+import pl.djob.vouchershop.catalog.exceptions.NoSuchProductException;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
@@ -19,32 +21,34 @@ public class ProductCatalog {
     }
 
     public boolean isExists(String productId) {
-        return products.isExists(productId);
+        return  products.isExists(productId);
     }
 
     public Product load(String productId) {
-        return products.load(productId);
+        return getProductOrThrow(productId);
     }
 
     public void updateDetails(String productId, String productDesc, String productPicture) {
-        Product loaded = products.load(productId);
+        Product loaded = getProductOrThrow(productId);
         loaded.setDescription(productDesc);
         loaded.setPicture(productPicture);
-
     }
 
     public void applyPrice(String productId, BigDecimal price) {
-        Product loaded = products.load(productId);
+        Product loaded = getProductOrThrow(productId);
         loaded.setPrice(price);
-
-
     }
 
     public List<Product> allPublished() {
         return products.allProducts()
                 .stream()
-                .filter(p ->p.getDescription() != null)
-                .filter(p ->p.getPicture() != null)
+                .filter(p -> p.getDescription() != null)
+                .filter(p -> p.getPicture() != null)
                 .collect(Collectors.toList());
+    }
+
+    private Product getProductOrThrow(String productId) {
+        return products.load(productId)
+                .orElseThrow(() -> new NoSuchProductException(String.format("There is no product with id %s", productId)));
     }
 }

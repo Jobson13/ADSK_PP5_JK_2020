@@ -2,7 +2,7 @@ package pl.djob.vouchershop.catalog;
 
 import org.junit.Test;
 
-public class MongoDbProductStorageTest {
+public class JdbcProductStorageTest {
 
     @Test
     public void itAllowAddProduct() {
