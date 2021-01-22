@@ -82,8 +82,8 @@ public class ListProductStorageTest {
     @Test
     public void testIt() {
         assertThat("Ala ma kota").containsIgnoringCase("ala");
-        assertThat(Arrays.asList("Damian", "Natalia"/*, "Emilka"*/))
-                .hasSize(2)
+        assertThat(Arrays.asList("Damian", "Natalia", "Emilka"))
+                .hasSize(3)
                 .contains("Damian", "Natalia")
                 .doesNotContain("Michal");
     }

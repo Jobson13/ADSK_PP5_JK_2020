@@ -1,7 +1,9 @@
 name: Create pacakge
 
 on:
-  push: ~
+  push:
+    tags:
+      - "v*"
 
 jobs:
   build:
