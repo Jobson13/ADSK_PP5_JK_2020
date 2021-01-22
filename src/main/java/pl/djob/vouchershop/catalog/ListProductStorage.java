@@ -37,4 +37,9 @@ public class ListProductStorage implements ProductStorage {
     public List<Product> allProducts() {
         return Collections.unmodifiableList(products);
     }
+
+    @Override
+    public void clean() {
+        products.clear();
+    }
 }
