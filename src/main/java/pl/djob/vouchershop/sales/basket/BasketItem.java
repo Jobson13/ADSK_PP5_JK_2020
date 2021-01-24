@@ -1,4 +1,4 @@
-package pl.djob.vouchershop.sales;
+package pl.djob.vouchershop.sales.basket;
 
 public class BasketItem {
     private final String productId;

@@ -1,7 +1,8 @@
-package pl.djob.vouchershop.sales;
+package pl.djob.vouchershop.sales.basket;
 
 import org.junit.Test;
 import pl.djob.vouchershop.catalog.Product;
+
 
 import java.util.UUID;
 
