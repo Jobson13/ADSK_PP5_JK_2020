@@ -8,7 +8,6 @@ public class Product {
     private String description;
     private String picture;
     private BigDecimal price;
-    private String foo = "boo";
 
     private Product() {}
 
@@ -45,9 +44,5 @@ public class Product {
     public Product setPrice(BigDecimal price) {
         this.price = price;
         return this;
-    }
-
-    public String getFoo() {
-        return foo;
     }
 }

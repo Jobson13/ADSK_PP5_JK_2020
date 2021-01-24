@@ -1,11 +1,19 @@
 package pl.djob.vouchershop.sales;
 
 public class BasketItem {
-    public String getProductId() {
-        return null;
+    private final String productId;
+    private final Integer quantity;
+
+    public BasketItem(String productId, Integer quantity) {
+        this.productId = productId;
+        this.quantity = quantity;
     }
 
-    public int getQuantity() {
-        return 0;
+    public String getProductId() {
+        return productId;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
     }
 }
