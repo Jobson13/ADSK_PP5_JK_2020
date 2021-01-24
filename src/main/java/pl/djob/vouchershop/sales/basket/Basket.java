@@ -38,7 +38,7 @@ public class Basket {
     }
 
     private void increaseQuantity(Product product) {
-        productsQuantities.put(
+         productsQuantities.put(
                 product.getId(),
                 productsQuantities.get(product.getId()) + 1);
     }

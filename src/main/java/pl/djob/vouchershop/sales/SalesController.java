@@ -1,9 +1,7 @@
 package pl.djob.vouchershop.sales;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import pl.djob.vouchershop.sales.offering.Offer;
 
 @RestController
 public class SalesController {
@@ -20,12 +18,12 @@ public class SalesController {
     }
 
     @GetMapping("/api/current-offer")
-    public void currentOffer() {
-        salesFacade.getCurrentOffer();
+    public Offer currentOffer() {
+        return salesFacade.getCurrentOffer();
     }
 
     @PostMapping("/api/accept-offer")
-    public PaymentDetails acceptOffer() {
-        return salesFacade.acceptOffer();
+    public PaymentDetails acceptOffer(@RequestBody ClientData clientData) {
+        return salesFacade.acceptOffer(clientData);
     }
 }
